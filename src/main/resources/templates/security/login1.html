@@ -1,0 +1,93 @@
+<html xmlns:th="http://www.thymeleaf.org"
+	>
+
+<head>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+	crossorigin="anonymous">
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+	crossorigin="anonymous"></script>
+<section class=" text-center text-lg-start">
+	<style>
+.rounded-t-5 {
+	border-top-left-radius: 0.5rem;
+	border-top-right-radius: 0.5rem;
+}
+
+#catch {
+	margin-top: 20px;
+	margin-bottom: 30px;
+	margin-left: 50px;
+}
+
+@media ( min-width : 992px) {
+	.rounded-tr-lg-0 {
+		border-top-right-radius: 0;
+	}
+	.rounded-bl-lg-5 {
+		border-bottom-left-radius: 0.5rem;
+	}
+}
+</style>
+</head>
+
+<body>
+	<main>
+		<div class="card mb-3">
+			<div class="row g-0 d-flex align-items-center">
+				<div class="col-lg-4 d-none d-lg-flex">
+					<img src="/images/logo-login.jpg"
+						
+						class="w-100 rounded-t-5 rounded-tr-lg-0 rounded-bl-lg-5" />
+				</div>
+				<div class="col-lg-8">
+					<div class="card-body py-5 px-md-5">
+
+						<form th:action="@{/security/login}" method="post">
+							<img src="/images/logo-shoes.png" alt=""
+								style="width: 310px; height: 170px; margin-left: 310px; margin-top: -40px; margin-bottom: 20px;">
+							<!-- Email input -->
+							<div class="form-floating mb-3  ">
+								<input class="form-control" id="floatingInput" name="username"
+									placeholder="Username"> <label for="floatingInput">Username</label>
+							</div>
+							<div class="form-floating mb-3 ">
+								<input type="password" name="password" class="form-control"
+									id="floatingPassword" placeholder="Password"> <label
+									for="floatingPassword">Password</label>
+							</div>
+							<div >
+								<div class="form-check catch ">
+									<input class="form-check-input" type="checkbox" value=""
+										id="rememberPasswordCheck"> <label
+										class="form-check-label id:'catch' " for="rememberPasswordCheck">
+										Remember password </label>
+
+								</div>
+
+								<div class="d-grid">
+									<i class="pull-left text-danger" th:text="${message}"></i>
+									<button
+										class="btn btn-primary btn-login text-uppercase fw-bold  btn btn-success"
+										type="submit"
+										style="background-color: black; border: 1px black; " >
+										
+										Sign in</button>
+								</div>
+								</div>
+						</form>
+
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</main>
+
+</body>
+
+</html>
